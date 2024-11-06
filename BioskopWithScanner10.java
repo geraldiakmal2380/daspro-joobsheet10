@@ -17,6 +17,13 @@ public class BioskopWithScanner10 {
             System.out.print("Masukan pilihan(1/2/3):");
             next = mlebu.nextInt();
             if (next == 1){
+                for (int i=0;i<penonton.length;i++){//penonton.length adalah 4 baris dari array kita tadi.
+                    for (int j=0;j<penonton[i].length;j++){//sedangkan penonton[i].length adalah jumlah kolom pada suatu baris yakni 2
+                        if (penonton[i][j] != null){
+                            System.out.println("peringatan : baris ke-"+i+" dan kolom ke-"+j+" telah ada yang menempati");
+                        }
+                    }
+                }
                 System.out.print("Masukan Nama : ");
                 nama = mlebu.next();
                 System.out.print("Masukan baris : ");
@@ -24,8 +31,12 @@ public class BioskopWithScanner10 {
                 System.out.print("Masukan kolom : ");
                 kolom = mlebu.nextInt();
 
-                penonton[baris-1][kolom-1] = nama;
-                break;
+                if (penonton[baris-1][kolom-1]== null){
+                    penonton[baris-1][kolom-1] = nama;
+                }
+                else{
+                    System.out.println("Maaf le sudah terisi tempatnya");
+                }
             }
 
             else if (next == 2){
