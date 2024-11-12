@@ -23,6 +23,7 @@ public class Tugas3 {
                         break;
                     }
                 }
+                mlebu.close();
                
                 
             }
